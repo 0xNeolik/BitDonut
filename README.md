@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# BitDonut
+# App Demo 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://user-images.githubusercontent.com/85538875/151782387-19a14c2f-44c4-429f-99b1-bf5defe7392b.mp4
 
-## Available Scripts
+# Overview
 
-In the project directory, you can run:
+BitDonut is a website based on the use of the API provided by CoinGecko.
 
-### `npm start`
+It is therefore a portal for real-time visualisation of the fluctuation of the cryptocurrency market, with its corresponding visual display in charts and the creation of a portfolio. Among the utilities that BitDonut deploys are:
+-Real-time visualisation of the price, market volume and market capitalisation of each cryptocurrency.
+-Display of information in real time, in addition to 1 day, 7 days, 30 days and 90 days data.
+-Cryptocurrency converter between them and US Dollar.
+-Creation of a portfolio.
+-Calculation of the total value of your portfolio.
+-Calculation of the variation in the price of your portfolio.
+-Percentage of each cryptocurrency in your portfolio.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Tecnologías
+<ul >
+<li>React</li> 
+<li>Axios</li>  
+<li>Chart 2 Js</li> 
+<li>HTML</li>
+<li>CSS</li>  
+</ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Server Install
+```
+npm install
+```
 
-### `npm test`
+# Server Usage
+```
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Access the client path of the project and type the following commands.
 
-### `npm run build`
+# Cient Install
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Client Usage
+```
+npm run start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Backend Endpoints
+ 
+|	Method	|	Path	|	Description	|
+|	-	|	-	|	-	|	
+|	GET	|	https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${databaseTimeSelected}	|Access the API to get the information to create the chart of the selected cryptocurrency.|
+|	GET	|	https://api.coingecko.com/api/v3/coins/${id}/ohlc?vs_currency=usd&days=${databaseTimeSelected}	|Access to the API to get the information of the closing and opening price of the selected cryptocurrency market.|
+|	GET	|	https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false	|Access the API to get all the information about cryptocurrencies.|
 
-### `npm run eject`
+# Front Endpoints 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|	Path	|	Description	|
+|	-	|	-	|	
+|	/	|	Home page	|
+|	/coins	|	All cryptocurrencies	|
+|	:id	|	Details of the selected cryptocurrency	|
+|	/convert	|	Cryptocurrency converter	|
+|	/portfolio	|	Display the user's portfolio.	|
