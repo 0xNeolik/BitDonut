@@ -10,11 +10,17 @@ BitDonut is a website based on the use of the API provided by CoinGecko.
 It is therefore a portal for real-time visualisation of the fluctuation of the cryptocurrency market, with its corresponding visual display in charts and the creation of a portfolio. Among the utilities that BitDonut deploys are:
 <br></br>
 -Real-time visualisation of the price, market volume and market capitalisation of each cryptocurrency.
+<br></br>
 -Display of information in real time, in addition to 1 day, 7 days, 30 days and 90 days data.
+<br></br>
 -Cryptocurrency converter between them and US Dollar.
+<br></br>
 -Creation of a portfolio.
+<br></br>
 -Calculation of the total value of your portfolio.
+<br></br>
 -Calculation of the variation in the price of your portfolio.
+<br></br>
 -Percentage of each cryptocurrency in your portfolio.
 
 # Tecnologías
