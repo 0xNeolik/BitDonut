@@ -1,7 +1,7 @@
 # BitDonut
 # App Demo 
 
-https://user-images.githubusercontent.com/85538875/151782387-19a14c2f-44c4-429f-99b1-bf5defe7392b.mp4
+https://user-images.githubusercontent.com/85538875/151788787-0a8914cb-7e6a-4098-b98e-9f3b42fe2360.mp4
 
 # Overview
 
