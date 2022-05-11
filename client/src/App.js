@@ -7,6 +7,11 @@ import "./App.css";
 import CoinDetails from "./Components/CoinDetails/CoinDetails";
 import Convert from "./Components/Convert/Convert";
 import Portfolio from "./Components/Portfolio/Portfolio";
+import Campaings from "./Components/Campaigns/Campaigns";
+import NewCampaigns from "./Components/Campaigns/NewCampaigns";
+import CampaignDetails from "./Components/Campaigns/CampaignDetails";
+import CampaignRequests from "./Components/Requests/CampaignRequests";
+import NewRequest from "./Components/Requests/NewRequest";
 
 function App() {
   let [coins, setCoins] = useState([]);
@@ -32,6 +37,17 @@ function App() {
       <Route path="/coins" element={<Coins coins={coins} />}></Route>
       <Route path="/convert" element={<Convert coins={coins} />}></Route>
       <Route path="/portfolio" element={<Portfolio coins={coins} />}></Route>
+      <Route path="/campaigns" element={<Campaings />}></Route>
+      <Route path="/newCampaign" element={<NewCampaigns />}></Route>
+      <Route
+        path="/campaigns/:id/requests"
+        element={<CampaignRequests />}
+      ></Route>
+      <Route path="/campaigns/:id" element={<CampaignDetails />}></Route>
+      <Route
+        path="/campaigns/:id/requests/new"
+        element={<NewRequest />}
+      ></Route>
       <Route path="/:id" element={<CoinDetails coins={coins} />}></Route>
     </Routes>
   );

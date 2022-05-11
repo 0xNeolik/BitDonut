@@ -51,6 +51,14 @@ function NavBar() {
             >
               <li>Conversor</li>
             </NavLink>
+            <NavLink
+              to="/campaigns"
+              style={{
+                color: "#6366f1",
+              }}
+            >
+              <li>Campaings</li>
+            </NavLink>
           </div>
           <div>
             <NavLink to="/portfolio">
