@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import web3 from "../../Web3/web3";
 import Campaing from "../../Web3/campaing";
 import NavBar from "../Layout/NavBar";
 
 function NewRequest() {
+  const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [description, setDescription] = useState();
   const [recipient, setRecipient] = useState();
@@ -24,9 +25,13 @@ function NewRequest() {
         .send({
           from: accounts[0],
         });
+      navigate(`/campaigns/${id}/requests`);
       setMessage();
     } catch (err) {
       setMessage(err.message);
+      setTimeout(() => {
+        setMessage("");
+      }, 6000);
     }
   };
   return (
@@ -74,8 +79,10 @@ function NewRequest() {
             <></>
           ) : message == "Successful transaction" ? (
             <div id="correct-transaction">{message}</div>
-          ) : (
+          ) : message !== "Transaction in progress" ? (
             <div id="error-transaction">{message}</div>
+          ) : (
+            <div id="current-transaction">{message}</div>
           )}
         </p>
       </div>

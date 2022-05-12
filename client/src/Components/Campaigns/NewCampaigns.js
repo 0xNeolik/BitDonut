@@ -56,8 +56,10 @@ function NewCampaings() {
             <></>
           ) : message == "Successful transaction" ? (
             <div id="correct-transaction">{message}</div>
-          ) : (
+          ) : message !== "Transaction in progress" ? (
             <div id="error-transaction">{message}</div>
+          ) : (
+            <div id="current-transaction">{message}</div>
           )}
         </p>
       </div>

@@ -33,10 +33,13 @@ function Campaings() {
       ) : (
         <>
           <NavBar />
-          <div id="display">
-            <Link to={"/newCampaign"} id="btn-new-campaing">
-              <button>Create a new Campaing </button>
-            </Link>
+          <div id="display-campaings">
+            <div id="header-campaings">
+              <h1 id="title-campaings">Campaings</h1>
+              <Link to={"/newCampaign"} id="btn-new-campaing">
+                <button>Create a new Campaing </button>
+              </Link>
+            </div>
 
             <div id="wrapper">
               {campaings.map((campaing) => {
