@@ -1,0 +1,144 @@
+#btn-new-campaing {
+  margin: 0 3% 0 0;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  margin: 2.5%;
+}
+#section-campaigns {
+  margin: 2% 3% 0 4%;
+  padding-bottom: 0;
+  color: white;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+#section-campaigns div {
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  align-items: center;
+  margin: 0 -20px;
+  justify-content: center;
+  background-color: #1e1f23;
+  border: 1px solid #6366f1;
+}
+#section-campaigns div p {
+  display: flex;
+  justify-content: space-between;
+}
+#section-campaigns:hover {
+  transform: scale(0.95);
+}
+#campaing-details {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  border-radius: 50px;
+  margin: 2.5%;
+  padding: 3%;
+  background-color: #1e1f23;
+  border: 1px solid #6366f1;
+}
+#campaing-details div {
+  display: table-column;
+  align-items: center;
+  justify-content: center;
+}
+
+#forms-campaigns p {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+#form-contribute {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+#contribution-input {
+  margin-top: 5px;
+  height: 30px;
+  width: 80px;
+  background-color: #1e1f23;
+  border: none;
+  border-bottom: 1px solid #6366f1;
+  font-size: x-large;
+  text-align: end;
+  color: white;
+}
+#error-transaction {
+  width: max-content;
+  margin: auto;
+  color: black;
+  font-size: x-large;
+  background-color: #ed5858;
+  border: 1px solid #ed5858;
+  border-radius: 20px;
+  padding: 2%;
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: parpadeo;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+#correct-transaction {
+  width: max-content;
+  margin: auto;
+  color: black;
+  font-size: x-large;
+  background-color: #abf69b;
+  border: 1px solid #abf69b;
+  border-radius: 20px;
+  padding: 2%;
+}
+
+@-moz-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Campaing from "../../Web3/campaing";
 import web3 from "../../Web3/web3";
 
-function ContributeForm({ address }) {
-  const [message, setMessage] = useState("");
+function ContributeForm({ address, getMessage }) {
   const [amountToContribute, setAmountToContribute] = useState("");
 
   let handleSubmit = async (e) => {
@@ -12,35 +11,42 @@ function ContributeForm({ address }) {
     try {
       const accounts = await web3.eth.getAccounts();
 
-      setMessage("Transaction in progress");
-
+      getMessage("Transaction in progress");
       await campaing.methods.contribute().send({
         from: accounts[0],
         value: web3.utils.toWei(amountToContribute, "ether"),
       });
-      setMessage();
+      getMessage("Successful transaction");
+      setTimeout(() => {
+        getMessage("");
+      }, 6000);
     } catch (err) {
-      setMessage(err.message);
+      getMessage(err.message);
+      setTimeout(() => {
+        getMessage("");
+      }, 6000);
     }
   };
   return (
     <>
-      <div>NewCampaings</div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="form-contribute">
         <div>
-          <div>
-            <label>Contribution to the Campaing</label>
+          <label>Contribution to the Campaing</label>
+          <p>
             <input
               onChange={(event) => setAmountToContribute(event.target.value)}
               name="name"
+              id="contribution-input"
               step="any"
               type="number"
             />
-          </div>
+            ETH
+          </p>
         </div>
-        <button type="submit">Contribute</button>
+        <div>
+          <button type="submit">Contribute</button>
+        </div>
       </form>
-      {message}
     </>
   );
 }
