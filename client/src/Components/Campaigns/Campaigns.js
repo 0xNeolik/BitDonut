@@ -20,6 +20,10 @@ function Campaings() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    fetchData();
+  }, [campaings]);
+
   return (
     <>
       <NavBar />

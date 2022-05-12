@@ -21,7 +21,7 @@ function Home(props) {
           Swap, earn, and build on the leading decentralized crypto trading
           protocol.
         </p>
-        <a href="https://github.com/AlvaroTeran-Developer">
+        <a href="https://github.com/0xNeolik">
           <img src={GitHub}></img>
         </a>
       </div>

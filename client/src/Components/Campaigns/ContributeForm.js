@@ -44,7 +44,9 @@ function ContributeForm({ address, getMessage }) {
           </p>
         </div>
         <div>
-          <button type="submit">Contribute</button>
+          <button type="submit" id="contribute-btn">
+            Contribute
+          </button>
         </div>
       </form>
     </>

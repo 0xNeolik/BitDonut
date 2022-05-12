@@ -57,6 +57,7 @@
   grid-column-gap: 20px;
   align-items: center;
   justify-content: center;
+  padding-left: 35px;
 }
 #form-contribute {
   display: grid;
@@ -64,6 +65,9 @@
   grid-column-gap: 20px;
   align-items: center;
   justify-content: center;
+}
+#contribute-btn {
+  margin-left: 19px;
 }
 #contribution-input {
   margin-top: 5px;
@@ -105,6 +109,50 @@
   border: 1px solid #abf69b;
   border-radius: 20px;
   padding: 2%;
+}
+#new-campaing-bg {
+  background-image: url("../../Images/Grid.png");
+  width: 90%;
+  height: 600px;
+  margin: 8% 5%;
+  position: absolute;
+  border-radius: 150px;
+  color: white;
+}
+#new-campaing-bg > div {
+  margin-top: 100px;
+}
+#form-new-campaign h1 {
+  font-weight: 80;
+  font-size: 72px;
+}
+#form-new-campaign {
+  margin: 7% 33% 0 33%;
+  display: column;
+  height: 400px;
+  z-index: 90000;
+}
+#form-new-campaign div {
+  border-radius: 20px;
+  border: 2px solid #6366f1;
+  background-color: #1e1f23;
+}
+#form-new-campaign h1,
+form {
+  margin: 6% 6%;
+}
+#form-new-campaign input {
+  margin-top: 5px;
+  margin-left: 30px;
+  border-radius: 30px;
+  height: 30px;
+  width: 150px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #6366f1;
+  font-size: x-large;
+  text-align: end;
+  color: #6366f1;
 }
 
 @-moz-keyframes parpadeo {
