@@ -119,6 +119,15 @@
   border-radius: 150px;
   color: white;
 }
+#new-request-bg {
+  background-image: url("../../Images/Grid.png");
+  width: 90%;
+  height: 600px;
+  margin: 8% 5%;
+  position: absolute;
+  border-radius: 150px;
+  color: white;
+}
 #new-campaing-bg > div {
   margin-top: 100px;
 }
@@ -132,7 +141,25 @@
   height: 400px;
   z-index: 90000;
 }
+#new-request-bg > div {
+  margin-top: 10px;
+}
+#form-new-request h1 {
+  font-weight: 80;
+  font-size: 72px;
+}
+#form-new-request {
+  margin: 7% 23% 0 23%;
+  display: column;
+  height: 400px;
+  z-index: 90000;
+}
 #form-new-campaign div {
+  border-radius: 20px;
+  border: 2px solid #6366f1;
+  background-color: #1e1f23;
+}
+#form-new-request div {
   border-radius: 20px;
   border: 2px solid #6366f1;
   background-color: #1e1f23;
@@ -141,17 +168,68 @@
 form {
   margin: 6% 6%;
 }
+#form-new-request h1,
+form {
+  margin: 6% 6%;
+}
+#form-new-campaign p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#form-new-request p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 #form-new-campaign input {
   margin-top: 5px;
   margin-left: 30px;
   border-radius: 30px;
   height: 30px;
-  width: 150px;
+  width: 220px;
   background-color: white;
   border: none;
   border-bottom: 1px solid #6366f1;
   font-size: x-large;
   text-align: end;
+  color: #6366f1;
+}
+#description-request {
+  margin-top: 5px;
+  margin-left: 30px;
+  border-radius: 30px;
+  height: 80px;
+  width: 330px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #6366f1;
+  padding: 3%;
+  color: #6366f1;
+}
+#address-request {
+  margin-top: 5px;
+  margin-left: 30px;
+  border-radius: 30px;
+  height: 30px;
+  width: 330px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #6366f1;
+  text-align: end;
+  color: #6366f1;
+}
+#amount-request {
+  margin-top: 5px;
+  margin-left: 30px;
+  border-radius: 30px;
+  height: 30px;
+  width: 100px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #6366f1;
+  text-align: end;
+  font-size: x-large;
   color: #6366f1;
 }
 
