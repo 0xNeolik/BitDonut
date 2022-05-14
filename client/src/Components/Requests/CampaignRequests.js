@@ -10,6 +10,7 @@ function CampaingRequests() {
   const [approversCounter, setApproversCounter] = useState([]);
   const [message, setMessage] = useState("");
   const [isLoadding, setIsLoadding] = useState(true);
+  const [urlEther, setUrlEther] = useState("");
   const { id } = useParams();
   const campaing = Campaing(id);
 
@@ -57,9 +58,15 @@ function CampaingRequests() {
       const accounts = await web3.eth.getAccounts();
       setMessage("Transaction in progress");
 
-      await campaing.methods.finalizeRequest(index).send({
-        from: accounts[0],
-      });
+      await campaing.methods
+        .finalizeRequest(index)
+        .send({
+          from: accounts[0],
+        })
+        .on("transactionHash", (hash) => {
+          setUrlEther("https://rinkeby.etherscan.io/tx/" + hash);
+        });
+
       setMessage("Successful transaction");
       setTimeout(() => {
         setMessage("");
@@ -131,11 +138,32 @@ function CampaingRequests() {
             {!message ? (
               <></>
             ) : message == "Successful transaction" ? (
-              <div id="correct-transaction">{message}</div>
+              <div id="correct-transaction">
+                {message}
+                <div>
+                  <a href={urlEther} target="_blank" id="seeEtherscan">
+                    See in Etherscan
+                  </a>
+                </div>
+              </div>
             ) : message !== "Transaction in progress" ? (
-              <div id="error-transaction">{message}</div>
+              <div id="error-transaction">
+                {message}
+                <div>
+                  <a href={urlEther} target="_blank" id="seeEtherscan">
+                    See in Etherscan
+                  </a>
+                </div>
+              </div>
             ) : (
-              <div id="current-transaction">{message}</div>
+              <div id="current-transaction">
+                {message}
+                <div>
+                  <a href={urlEther} target="_blank" id="seeEtherscan">
+                    See in Etherscan
+                  </a>
+                </div>
+              </div>
             )}
           </div>
         </>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Campaing from "../../Web3/campaing";
 import web3 from "../../Web3/web3";
 
-function ContributeForm({ address, getMessage }) {
+function ContributeForm({ address, getMessage, getUrlEtherscan }) {
   const [amountToContribute, setAmountToContribute] = useState("");
 
   let handleSubmit = async (e) => {
@@ -12,10 +12,16 @@ function ContributeForm({ address, getMessage }) {
       const accounts = await web3.eth.getAccounts();
 
       getMessage("Transaction in progress");
-      await campaing.methods.contribute().send({
-        from: accounts[0],
-        value: web3.utils.toWei(amountToContribute, "ether"),
-      });
+      await campaing.methods
+        .contribute()
+        .send({
+          from: accounts[0],
+          value: web3.utils.toWei(amountToContribute, "ether"),
+        })
+        .on("transactionHash", (hash) => {
+          getUrlEtherscan("https://rinkeby.etherscan.io/tx/" + hash);
+        });
+
       getMessage("Successful transaction");
       setTimeout(() => {
         getMessage("");
@@ -38,6 +44,7 @@ function ContributeForm({ address, getMessage }) {
               name="name"
               id="contribution-input"
               step="any"
+              min="0.000000001"
               type="number"
             />
             ETH

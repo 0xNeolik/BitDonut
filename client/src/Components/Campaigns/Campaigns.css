@@ -131,7 +131,7 @@
   background-color: #ed5858;
   border: 1px solid #ed5858;
   border-radius: 20px;
-  padding: 2%;
+  padding: 1% 2%;
   animation-name: parpadeo;
   animation-duration: 1s;
   animation-timing-function: linear;
@@ -150,7 +150,7 @@
   background-color: #ffb14e;
   border: 1px solid #ffb14e;
   border-radius: 20px;
-  padding: 2%;
+  padding: 1% 2%;
   animation-name: parpadeo;
   animation-duration: 1s;
   animation-timing-function: linear;
@@ -170,7 +170,7 @@
   background-color: #abf69b;
   border: 1px solid #abf69b;
   border-radius: 20px;
-  padding: 2%;
+  padding: 1% 2%;
 }
 #new-campaing-bg {
   background-image: url("../../Images/Grid.png");

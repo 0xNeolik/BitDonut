@@ -9,11 +9,16 @@ function CampaingDetails() {
   const { id } = useParams();
   const [message, setMessage] = useState("");
   const [dataCampaing, setDataCampaing] = useState([]);
+  const [urlEther, setUrlEther] = useState("");
 
   const campaing = Campaing(id);
 
   const getMessage = (messageIncoming) => {
     setMessage(messageIncoming);
+  };
+  const getUrlEtherscan = (urletherscan) => {
+    console.log(urletherscan);
+    setUrlEther(urletherscan);
   };
 
   async function componentDidMount() {
@@ -62,17 +67,42 @@ function CampaingDetails() {
                 </Link>
               )}
             </p>
-            <ContributeForm address={id} getMessage={getMessage} />
+            <ContributeForm
+              address={id}
+              getMessage={getMessage}
+              getUrlEtherscan={getUrlEtherscan}
+            />
           </div>
         </div>
         {!message ? (
           <></>
         ) : message == "Successful transaction" ? (
-          <div id="correct-transaction">{message}</div>
+          <div id="correct-transaction">
+            {message}
+            <div>
+              <a href={urlEther} target="_blank" id="seeEtherscan">
+                See in Etherscan
+              </a>
+            </div>
+          </div>
         ) : message !== "Transaction in progress" ? (
-          <div id="error-transaction">{message}</div>
+          <div id="error-transaction">
+            {message}
+            <div>
+              <a href={urlEther} target="_blank" id="seeEtherscan">
+                See in Etherscan
+              </a>
+            </div>
+          </div>
         ) : (
-          <div id="current-transaction">{message}</div>
+          <div id="current-transaction">
+            {message}
+            <div>
+              <a href={urlEther} target="_blank" id="seeEtherscan">
+                See in Etherscan
+              </a>
+            </div>
+          </div>
         )}
       </div>
     </>

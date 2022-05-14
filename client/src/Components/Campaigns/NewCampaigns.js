@@ -7,6 +7,7 @@ import NavBar from "../Layout/NavBar";
 function NewCampaings() {
   const [message, setMessage] = useState("");
   const [minimalAmount, setMinimalAmount] = useState("");
+  const [urlEther, setUrlEther] = useState("");
   const navigate = useNavigate();
 
   let handleSubmit = async (e) => {
@@ -17,9 +18,14 @@ function NewCampaings() {
       setMessage("Transaction in progress");
       const amount = await web3.utils.toWei(minimalAmount, "ether");
 
-      await factory.methods.createCampaing(amount).send({
-        from: accounts[0],
-      });
+      await factory.methods
+        .createCampaing(amount)
+        .send({
+          from: accounts[0],
+        })
+        .on("transactionHash", (hash) => {
+          setUrlEther("https://rinkeby.etherscan.io/tx/" + hash);
+        });
 
       navigate("/campaigns");
       setMessage("");
@@ -44,6 +50,7 @@ function NewCampaings() {
                   onChange={(event) => setMinimalAmount(event.target.value)}
                   name="name"
                   step="any"
+                  min="0.000000001"
                   type="number"
                 />
               </p>
@@ -55,11 +62,32 @@ function NewCampaings() {
           {!message ? (
             <></>
           ) : message == "Successful transaction" ? (
-            <div id="correct-transaction">{message}</div>
+            <div id="correct-transaction">
+              {message}
+              <div>
+                <a href={urlEther} target="_blank" id="seeEtherscan">
+                  See in Etherscan
+                </a>
+              </div>
+            </div>
           ) : message !== "Transaction in progress" ? (
-            <div id="error-transaction">{message}</div>
+            <div id="error-transaction">
+              {message}
+              <div>
+                <a href={urlEther} target="_blank" id="seeEtherscan">
+                  See in Etherscan
+                </a>
+              </div>
+            </div>
           ) : (
-            <div id="current-transaction">{message}</div>
+            <div id="current-transaction">
+              {message}
+              <div>
+                <a href={urlEther} target="_blank" id="seeEtherscan">
+                  See in Etherscan
+                </a>
+              </div>
+            </div>
           )}
         </p>
       </div>
